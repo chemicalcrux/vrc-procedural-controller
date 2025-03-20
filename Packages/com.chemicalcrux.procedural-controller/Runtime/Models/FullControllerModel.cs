@@ -12,7 +12,8 @@ namespace ChemicalCrux.ProceduralController.Runtime.Models
         public string path;
     }
     
-    public class FullControllerModel : Model
+    [CreateAssetMenu]
+    public class FullControllerModel : AssetModel
     {
         public List<RuntimeAnimatorController> controllers;
         public List<MenuInfo> menus;

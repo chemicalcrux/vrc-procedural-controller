@@ -1,5 +1,7 @@
+using System.Linq;
+using ChemicalCrux.ProceduralController.Editor.Receivers;
 using ChemicalCrux.ProceduralController.Runtime;
-using com.vrcfury.api;
+using ChemicalCrux.ProceduralController.Runtime.Interfaces;
 using UnityEngine;
 using VRC.SDKBase.Editor.BuildPipeline;
 
@@ -11,7 +13,7 @@ namespace ChemicalCrux.ProceduralController.Editor
         
         public bool OnPreprocessAvatar(GameObject avatarGameObject)
         {
-            ServiceLocator.Refresh();
+            ProcessorLocator.Refresh();
             
             foreach (var setup in avatarGameObject.GetComponentsInChildren<ProceduralControllerSetup>())
             {
@@ -23,19 +25,31 @@ namespace ChemicalCrux.ProceduralController.Editor
 
         private static void Process(ProceduralControllerSetup setup, GameObject avatarRoot)
         {
-            var context = new Context()
+            var context = new Context
             {
                 avatarRoot = avatarRoot,
-                furyFullController = FuryComponents.CreateFullController(setup.gameObject)
+                targetObject = setup.gameObject,
+                receiver = new FuryFullControllerReceiver(setup.gameObject)
             };
 
-            foreach (var model in setup.models)
+            if (!string.IsNullOrEmpty(setup.menuPrefix))
             {
-                foreach (var processor in ServiceLocator.GetProcessors(model))
+                context.receiver = new MenuPrefixReceiver(context.receiver, setup.menuPrefix);
+            }
+
+            var models = Enumerable.Empty<IModel>()
+                .Concat(setup.assetModels)
+                .Concat(setup.componentModels);
+            
+            foreach (var model in models)
+            {
+                foreach (var processor in ProcessorLocator.GetProcessors(model))
                 {
                     Debug.Log("Running " + processor + " on " + model);
                     processor.Process(context);
                 }
+
+                context.NewScope();
             }
         }
     }

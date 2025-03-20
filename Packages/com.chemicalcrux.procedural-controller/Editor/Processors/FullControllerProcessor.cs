@@ -8,16 +8,16 @@ namespace ChemicalCrux.ProceduralController.Editor.Processors
         public override void Process(Context context)
         {
             foreach (var controller in model.controllers)
-                context.furyFullController.AddController(controller);
+                context.receiver.AddController(controller);
 
             foreach (var menuInfo in model.menus)
-                context.furyFullController.AddMenu(menuInfo.menu, menuInfo.path);
+                context.receiver.AddMenu(menuInfo.menu, menuInfo.path);
 
             foreach (var parameterList in model.parameters)
-                context.furyFullController.AddParams(parameterList);
+                context.receiver.AddParameters(parameterList);
 
             foreach (var globalParam in model.globalParameters)
-                context.furyFullController.AddGlobalParam(globalParam);
+                context.receiver.AddGlobalParameter(globalParam);
         }
     }
 }

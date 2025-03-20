@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using ChemicalCrux.ProceduralController.Editor.Processors;
-using ChemicalCrux.ProceduralController.Runtime.Models;
-using UnityEngine;
+using ChemicalCrux.ProceduralController.Runtime.Interfaces;
 
 namespace ChemicalCrux.ProceduralController.Editor
 {
-    // I don't know if this is what "service locator" means, but whatever
-    public static class ServiceLocator
+    /// <summary>
+    /// This is pretty basic -- for a given type T, it'll find every class that is assignable
+    /// to Processor&lt;T&gt;
+    ///
+    /// This is necessary because the models are separated from the actual processing logic.
+    /// The models don't say "I'm Foo, and I need to be processed by Bar" -- instead, Bar says "I want to
+    /// operate on every instance of Foo"
+    /// </summary>
+    public static class ProcessorLocator
     {
         private static List<Type> _processorTypes;
         private static Dictionary<Type, List<Type>> _processorMap;
@@ -20,7 +26,7 @@ namespace ChemicalCrux.ProceduralController.Editor
             _processorMap = new();
 
             Type baseProcessorType = typeof(Processor<>);
-            Type baseModelType = typeof(Model);
+            Type baseModelType = typeof(IModel);
             
             foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies().Where(asm => !asm.IsDynamic))
             {
@@ -28,7 +34,6 @@ namespace ChemicalCrux.ProceduralController.Editor
                 {
                     if (baseModelType.IsAssignableFrom(type) && !type.IsAbstract)
                     {
-                        Debug.Log("Model: " + type);
                         _processorMap[type] = new();
                     }
                 }
@@ -50,16 +55,12 @@ namespace ChemicalCrux.ProceduralController.Editor
                         continue;
                     }
 
-                    Debug.Log("Considering: " + type);
-                    
                     foreach (var modelType in _processorMap.Keys)
                     {
                         var candidateType = baseProcessorType.MakeGenericType(modelType);
 
-                        Debug.Log("Trying: " + candidateType);
                         if (candidateType.IsAssignableFrom(current))
                         {
-                            Debug.Log("Hit!");
                             _processorMap[modelType].Add(type);
                         }
                     }
@@ -67,13 +68,12 @@ namespace ChemicalCrux.ProceduralController.Editor
             }
         }
 
-        public static IEnumerable<ProcessorBase> GetProcessors(Model model)
+        public static IEnumerable<ProcessorBase> GetProcessors(IModel model)
         {
             foreach (var processorType in _processorMap[model.GetType()])
             {
-                Debug.Log("Activating: " + processorType);
-                
                 var processor = (ProcessorBase) Activator.CreateInstance(processorType);
+                
                 var field = processorType.GetField("model", BindingFlags.Public | BindingFlags.Instance);
                 field.SetValue(processor, model);
                 

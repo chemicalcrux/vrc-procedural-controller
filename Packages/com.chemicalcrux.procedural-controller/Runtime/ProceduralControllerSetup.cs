@@ -7,6 +7,9 @@ namespace ChemicalCrux.ProceduralController.Runtime
 {
     public class ProceduralControllerSetup : MonoBehaviour, IEditorOnly
     {
-        public List<Model> models;
+        public List<AssetModel> assetModels;
+        public List<ComponentModel> componentModels;
+
+        public string menuPrefix;
     }
 }
