@@ -1,9 +1,9 @@
-using ChemicalCrux.ProceduralController.Editor.Interfaces;
+using Crux.ProceduralController.Editor.Interfaces;
 using UnityEngine;
 using VRC.SDK3.Avatars.Components;
 using VRC.SDK3.Avatars.ScriptableObjects;
 
-namespace ChemicalCrux.ProceduralController.Editor.Receivers
+namespace Crux.ProceduralController.Editor.Receivers
 {
     public class MenuPrefixReceiver : IReceiver
     {

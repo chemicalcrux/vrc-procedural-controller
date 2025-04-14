@@ -1,7 +1,6 @@
-using ChemicalCrux.ProceduralController.Runtime;
-using ChemicalCrux.ProceduralController.Runtime.Models;
+using Crux.ProceduralController.Runtime.Models;
 
-namespace ChemicalCrux.ProceduralController.Editor.Processors
+namespace Crux.ProceduralController.Editor.Processors
 {
     public class FullControllerProcessor : Processor<FullControllerModel>
     {

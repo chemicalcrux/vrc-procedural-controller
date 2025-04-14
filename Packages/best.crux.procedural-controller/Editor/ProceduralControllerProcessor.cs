@@ -1,11 +1,11 @@
 using System.Linq;
-using ChemicalCrux.ProceduralController.Editor.Receivers;
-using ChemicalCrux.ProceduralController.Runtime;
-using ChemicalCrux.ProceduralController.Runtime.Interfaces;
+using Crux.ProceduralController.Editor.Receivers;
+using Crux.ProceduralController.Runtime;
+using Crux.ProceduralController.Runtime.Interfaces;
 using UnityEngine;
 using VRC.SDKBase.Editor.BuildPipeline;
 
-namespace ChemicalCrux.ProceduralController.Editor
+namespace Crux.ProceduralController.Editor
 {
     public class ProceduralControllerProcessor : IVRCSDKPreprocessAvatarCallback
     {

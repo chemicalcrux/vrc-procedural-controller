@@ -1,11 +1,11 @@
-using ChemicalCrux.ProceduralController.Editor.Interfaces;
 using com.vrcfury.api;
 using com.vrcfury.api.Components;
+using Crux.ProceduralController.Editor.Interfaces;
 using UnityEngine;
 using VRC.SDK3.Avatars.Components;
 using VRC.SDK3.Avatars.ScriptableObjects;
 
-namespace ChemicalCrux.ProceduralController.Editor.Receivers
+namespace Crux.ProceduralController.Editor.Receivers
 {
     public class FuryFullControllerReceiver : IReceiver
     {

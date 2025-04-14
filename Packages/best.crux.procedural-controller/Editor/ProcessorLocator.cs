@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using ChemicalCrux.ProceduralController.Editor.Processors;
-using ChemicalCrux.ProceduralController.Runtime.Interfaces;
+using Crux.ProceduralController.Editor.Processors;
+using Crux.ProceduralController.Runtime.Interfaces;
 
-namespace ChemicalCrux.ProceduralController.Editor
+namespace Crux.ProceduralController.Editor
 {
     /// <summary>
     /// This is pretty basic -- for a given type T, it'll find every class that is assignable

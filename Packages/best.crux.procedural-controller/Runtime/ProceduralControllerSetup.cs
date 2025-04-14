@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using ChemicalCrux.ProceduralController.Runtime.Models;
+using Crux.ProceduralController.Runtime.Models;
 using UnityEngine;
 using VRC.SDKBase;
 
-namespace ChemicalCrux.ProceduralController.Runtime
+namespace Crux.ProceduralController.Runtime
 {
     public class ProceduralControllerSetup : MonoBehaviour, IEditorOnly
     {

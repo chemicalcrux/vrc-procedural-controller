@@ -1,5 +1,5 @@
 {
-  "name": "com.chemicalcrux.procedural-controller",
+  "name": "best.crux.procedural-controller",
   "displayName": "Procedural Controller",
   "version": "0.1.1",
   "unity": "2022.3",
@@ -11,7 +11,8 @@
     "url": "https://github.com/chemicalcrux/"
   },
   "vpmDependencies" : {
-    "com.vrchat.avatars" : ">=3.7.6 < 3.8.X",
-    "com.vrcfury.vrcfury" : ">=1.1206.0"
+    "com.vrchat.avatars" : ">=3.7.6 <3.9.0",
+    "com.vrcfury.vrcfury" : ">=1.1206.0",
+    "best.crux.core" : ">=0.6.3 <0.7.0"
   }
 }

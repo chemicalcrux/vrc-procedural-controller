@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRC.SDK3.Avatars.ScriptableObjects;
 
-namespace ChemicalCrux.ProceduralController.Runtime.Models
+namespace Crux.ProceduralController.Runtime.Models
 {
     [Serializable]
     public class MenuInfo

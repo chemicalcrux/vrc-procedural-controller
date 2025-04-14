@@ -1,6 +1,6 @@
-using ChemicalCrux.ProceduralController.Runtime.Interfaces;
+using Crux.ProceduralController.Runtime.Interfaces;
 
-namespace ChemicalCrux.ProceduralController.Editor.Processors
+namespace Crux.ProceduralController.Editor.Processors
 {
     public abstract class Processor<ModelType> : ProcessorBase where ModelType : IModel
     {

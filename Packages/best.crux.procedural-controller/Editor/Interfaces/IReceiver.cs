@@ -2,7 +2,7 @@ using UnityEngine;
 using VRC.SDK3.Avatars.Components;
 using VRC.SDK3.Avatars.ScriptableObjects;
 
-namespace ChemicalCrux.ProceduralController.Editor.Interfaces
+namespace Crux.ProceduralController.Editor.Interfaces
 {
     public interface IReceiver
     {

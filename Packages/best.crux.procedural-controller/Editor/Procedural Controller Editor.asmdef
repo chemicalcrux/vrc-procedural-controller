@@ -1,11 +1,13 @@
 {
-    "name": "ProceduralControllerRuntime",
-    "rootNamespace": "ChemicalCrux.ProceduralController.Runtime",
+    "name": "Crux.ProceduralController.Editor",
+    "rootNamespace": "Crux.ProceduralController.Editor",
     "references": [
-        "GUID:5718fb738711cd34ea54e9553040911d",
+        "GUID:095df8f1a90724013b1c492e5ce28301",
         "GUID:cd59bf9231294ffab8427690942c6a35"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

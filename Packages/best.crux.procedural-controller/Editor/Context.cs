@@ -1,8 +1,8 @@
-using ChemicalCrux.ProceduralController.Editor.Interfaces;
+using Crux.ProceduralController.Editor.Interfaces;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace ChemicalCrux.ProceduralController.Editor
+namespace Crux.ProceduralController.Editor
 {
     [PublicAPI]
     public class Context
@@ -15,7 +15,8 @@ namespace ChemicalCrux.ProceduralController.Editor
         private int scopeCounter;
         
         /// <summary>
-        /// Gives a unique prefix to the parameter.
+        /// Gives a unique prefix to the parameter. This should be used for any parameter
+        /// that should be isolated from other models in the same Procedural Controller.
         /// </summary>
         /// <param name="paramName"></param>
         /// <returns></returns>

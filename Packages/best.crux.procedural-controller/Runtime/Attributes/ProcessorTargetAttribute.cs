@@ -1,6 +1,6 @@
 using System;
 
-namespace ChemicalCrux.ProceduralController.Runtime.Attributes
+namespace Crux.ProceduralController.Runtime.Attributes
 {
     public class ProcessorTargetAttribute : Attribute
     {
