@@ -25,6 +25,12 @@ namespace Crux.ProceduralController.Editor
 
         private static void Process(ProceduralControllerSetup setup, GameObject avatarRoot)
         {
+            if (!setup.data.TryUpgradeTo(out ProceduralControllerDataV1 data))
+            {
+                Debug.LogWarning("Failed to upgrade the procedural controller's data.");
+                return;
+            }
+            
             var context = new Context
             {
                 avatarRoot = avatarRoot,
@@ -32,14 +38,14 @@ namespace Crux.ProceduralController.Editor
                 receiver = new FuryFullControllerReceiver(setup.gameObject)
             };
 
-            if (!string.IsNullOrEmpty(setup.menuPrefix))
+            if (!string.IsNullOrEmpty(data.menuPrefix))
             {
-                context.receiver = new MenuPrefixReceiver(context.receiver, setup.menuPrefix);
+                context.receiver = new MenuPrefixReceiver(context.receiver, data.menuPrefix);
             }
 
             var models = Enumerable.Empty<IModel>()
-                .Concat(setup.assetModels)
-                .Concat(setup.componentModels);
+                .Concat(data.assetModels)
+                .Concat(data.componentModels);
             
             foreach (var model in models)
             {

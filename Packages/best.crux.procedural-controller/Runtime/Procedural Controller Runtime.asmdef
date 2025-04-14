@@ -3,7 +3,8 @@
     "rootNamespace": "Crux.ProceduralController.Runtime",
     "references": [
         "GUID:5718fb738711cd34ea54e9553040911d",
-        "GUID:cd59bf9231294ffab8427690942c6a35"
+        "GUID:cd59bf9231294ffab8427690942c6a35",
+        "GUID:1cdc6dedefbda46a6b25f4afc8d269f1"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

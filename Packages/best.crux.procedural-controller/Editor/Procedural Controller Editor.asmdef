@@ -3,7 +3,8 @@
     "rootNamespace": "Crux.ProceduralController.Editor",
     "references": [
         "GUID:095df8f1a90724013b1c492e5ce28301",
-        "GUID:cd59bf9231294ffab8427690942c6a35"
+        "GUID:cd59bf9231294ffab8427690942c6a35",
+        "GUID:1cdc6dedefbda46a6b25f4afc8d269f1"
     ],
     "includePlatforms": [
         "Editor"

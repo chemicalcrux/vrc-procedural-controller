@@ -19,13 +19,3 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: VRCFaceBlendH
-    valueType: 1
-    saved: 1
-    defaultValue: 0
-    networkSynced: 1
-  - name: VRCFaceBlendV
-    valueType: 1
-    saved: 1
-    defaultValue: 0
-    networkSynced: 1

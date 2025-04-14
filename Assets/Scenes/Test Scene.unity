@@ -837,10 +837,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78006f22d5e0e47d9be8c436273a4dff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  assetModels:
-  - {fileID: 11400000, guid: 8e1b9f1634b624a35b4ea990e2595b71, type: 2}
-  componentModels: []
-  menuPrefix: 
+  data:
+    rid: 2962847717150162944
+  references:
+    version: 2
+    RefIds:
+    - rid: 2962847717150162944
+      type: {class: ProceduralControllerDataV1, ns: Crux.ProceduralController.Runtime,
+        asm: Crux.ProceduralController.Runtime}
+      data:
+        assetModels:
+          list:
+          - {fileID: 11400000, guid: 8e1b9f1634b624a35b4ea990e2595b71, type: 2}
+        componentModels:
+          list: []
+        menuPrefix: 
 --- !u!4 &1662274665 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4914392469426263442, guid: f81e8172c337a714894d6fdbd0900d8d,
