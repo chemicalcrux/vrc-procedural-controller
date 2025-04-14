@@ -15,7 +15,7 @@ namespace Crux.ProceduralController.Editor
         {
             ProcessorLocator.Refresh();
             
-            foreach (var setup in avatarGameObject.GetComponentsInChildren<ProceduralControllerSetup>())
+            foreach (var setup in avatarGameObject.GetComponentsInChildren<ProceduralControllerBuilder>())
             {
                 Process(setup, avatarGameObject);
             }
@@ -23,9 +23,9 @@ namespace Crux.ProceduralController.Editor
             return true;
         }
 
-        private static void Process(ProceduralControllerSetup setup, GameObject avatarRoot)
+        private static void Process(ProceduralControllerBuilder builder, GameObject avatarRoot)
         {
-            if (!setup.data.TryUpgradeTo(out ProceduralControllerDataV1 data))
+            if (!builder.data.TryUpgradeTo(out ProceduralControllerDataV1 data))
             {
                 Debug.LogWarning("Failed to upgrade the procedural controller's data.");
                 return;
@@ -34,8 +34,8 @@ namespace Crux.ProceduralController.Editor
             var context = new Context
             {
                 avatarRoot = avatarRoot,
-                targetObject = setup.gameObject,
-                receiver = new FuryFullControllerReceiver(setup.gameObject)
+                targetObject = builder.gameObject,
+                receiver = new FuryFullControllerReceiver(builder.gameObject)
             };
 
             if (!string.IsNullOrEmpty(data.menuPrefix))
