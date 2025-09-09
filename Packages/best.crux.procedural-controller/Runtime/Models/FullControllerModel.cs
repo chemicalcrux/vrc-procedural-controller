@@ -6,7 +6,7 @@ using VRC.SDK3.Avatars.ScriptableObjects;
 
 namespace Crux.ProceduralController.Runtime.Models
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = Consts.AssetRootPath + "Full Controller Model")]
     public class FullControllerModel : AssetModel
     {
         [SerializeField, SerializeReference]
