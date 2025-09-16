@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 1474916150}
   - component: {fileID: 1474916151}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Procedural Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -851,7 +851,7 @@ MonoBehaviour:
           - {fileID: 11400000, guid: 8e1b9f1634b624a35b4ea990e2595b71, type: 2}
         componentModels:
           list: []
-        menuPrefix: 
+        menuPrefix: Menu/Prefix
 --- !u!4 &1662274665 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4914392469426263442, guid: f81e8172c337a714894d6fdbd0900d8d,

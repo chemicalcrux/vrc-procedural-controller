@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEmpty: 0
   parameters:
-  - name: asdf
+  - name: Control
     valueType: 0
     saved: 1
     defaultValue: 0

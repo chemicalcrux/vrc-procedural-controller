@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Parameters: {fileID: 11400000, guid: 27e3bc227a573407fbe051c618fa8da0, type: 2}
   controls:
-  - name: asdf
+  - name: Button
     icon: {fileID: 0}
     type: 0
     parameter:
-      name: asdf
+      name: Control
     value: 1
     style: 0
     subMenu: {fileID: 0}
