@@ -40,7 +40,7 @@ namespace Crux.ProceduralController.Editor
 
             if (!string.IsNullOrEmpty(data.menuPrefix))
             {
-                context.receiver = new MenuPrefixReceiver(context.receiver, data.menuPrefix);
+                context.receiver = new MenuPrefixReceiver(context.receiver, data.menuPrefix, data.menuIcon);
             }
 
             var models = Enumerable.Empty<IModel>()

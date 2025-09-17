@@ -24,6 +24,7 @@ namespace Crux.ProceduralController.Runtime
         [SerializeField] internal DecoratedList<ComponentModel> componentModels;
 
         [SerializeField] internal string menuPrefix;
+        [SerializeField] internal Texture2D menuIcon;
         
         public override ProceduralControllerData Upgrade()
         {
