@@ -20,7 +20,7 @@ namespace Crux.ProceduralController.Editor
         /// </summary>
         /// <param name="paramName"></param>
         /// <returns></returns>
-        public string MakeParam(string paramName) => $"PC_{scopeCounter:N3}_" + paramName;
+        public string MakeParam(string paramName) => $"PC_{scopeCounter:D3}_" + paramName;
         
         /// <summary>
         /// Creates a new parameter scope. Parameters produced by MakeParam will not overlap with
