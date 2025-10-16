@@ -1,7 +1,7 @@
 {
   "name": "best.crux.procedural-controller",
   "displayName": "Procedural Controller",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "unity": "2022.3",
   "description": "Generates VRCFury Full Controllers as your avatar is built",
   "vrchatVersion": "2025.1.2",
