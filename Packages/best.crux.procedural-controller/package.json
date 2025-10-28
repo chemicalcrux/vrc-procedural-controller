@@ -13,7 +13,7 @@
   "vpmDependencies" : {
     "com.vrchat.avatars" : ">=3.7.6 <3.10.0",
     "com.vrcfury.vrcfury" : ">=1.1206.0 <2.0.0",
-    "best.crux.core" : "^0.8.0"
+    "best.crux.core" : ">=0.8.0 <0.10.0"
   },
   "changelogUrl": "https://github.com/chemicalcrux/vrc-procedural-controller/blob/main/Packages/best.crux.procedural-controller/CHANGELOG.md",
   "documentationUrl": "https://chemicalcrux.github.io/vrc-docs/docs/code/best.crux.procedural-controller/"
